@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'pressable_card.dart';
 import '../utils/app_theme.dart';
+import '../screens/course/course_detail_screen.dart';
 
 class AttendanceCard extends StatelessWidget {
   final String courseName;
@@ -20,9 +21,16 @@ class AttendanceCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final isLow = percentage < 75;
     return PressableCard(
-  onTap: () {
-    // later → navigate to detail screen
-  },
+    onTap: () {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (_) => CourseDetailScreen(
+            courseName: courseName,
+          ),
+        ),
+      );
+    },
   child: Container(
     margin: const EdgeInsets.symmetric(vertical: 8),
     padding: const EdgeInsets.all(16),

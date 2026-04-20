@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'screens/results/results_screen.dart';
+import 'screens/course/course_detail_screen.dart';
 import 'utils/app_theme.dart';
 
 void main() {
@@ -14,7 +14,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
-      home: const ResultsScreen(), // 👈 test this screen
+
+      // 👇 TEST THIS SCREEN
+      home: const CourseDetailScreen(
+        courseName: "Applied Physics",
+      ),
     );
   }
 }
